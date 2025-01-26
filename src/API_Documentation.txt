@@ -1,0 +1,28 @@
+# API Documentation
+
+## WebSocket Events
+
+1. **Connection**
+   - Description: Logs when a user connects.
+
+2. **Disconnect**
+   - Description: Logs when a user disconnects.
+
+3. **Message**
+   - Description: Handles incoming messages and broadcasts them to all connected clients.
+
+4. **Join Room**
+   - Description: Allows users to join a specific room.
+
+5. **Message to Room**
+   - Description: Sends messages to a specific room.
+
+## REST API Endpoints
+
+1. **GET /status**
+   - Description: Returns the server status.
+   - Response: `{ "status": "Server is running" }`
+
+2. **GET /message**
+   - Description: Returns a sample message.
+   - Response: `{ "message": "Hello from the server!" }`
