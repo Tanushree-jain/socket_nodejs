@@ -9,10 +9,16 @@ export const setupSocket = (io: Server) => {
         });
 
         // Handling a message event for bidirectional communication
-        socket.on('message', (msg: string) => {
+        socket.on('clientMessage', (msg: string) => {
             console.log('Message received: ' + msg);
-            // Broadcast the message to all clients
-            io.emit('message', msg);
+            // Emit the message back to all clients
+            io.emit('clientMessage', msg);
+        });
+
+        socket.on('serverMessage', (msg: string) => {
+            console.log('Message received: ' + msg);
+            // Emit the message back to all clients
+            io.emit('serverMessage', msg);
         });
 
         // Joining a room

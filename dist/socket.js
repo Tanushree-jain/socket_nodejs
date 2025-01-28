@@ -5,10 +5,15 @@ export const setupSocket = (io) => {
             console.log('User disconnected');
         });
         // Handling a message event for bidirectional communication
-        socket.on('message', (msg) => {
+        socket.on('clientMessage', (msg) => {
             console.log('Message received: ' + msg);
-            // Broadcast the message to all clients
-            io.emit('message', msg);
+            // Emit the message back to all clients
+            io.emit('clientMessage', msg);
+        });
+        socket.on('serverMessage', (msg) => {
+            console.log('Message received: ' + msg);
+            // Emit the message back to all clients
+            io.emit('serverMessage', msg);
         });
         // Joining a room
         socket.on('joinRoom', (room) => {

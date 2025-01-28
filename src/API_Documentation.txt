@@ -1,28 +1,11 @@
 # API Documentation
 
-## WebSocket Events
+## Endpoints
 
-1. **Connection**
-   - Description: Logs when a user connects.
+### GET /
+Returns a welcome message ("Welcome to the server!").
 
-2. **Disconnect**
-   - Description: Logs when a user disconnects.
+## Socket.IO Events
 
-3. **Message**
-   - Description: Handles incoming messages and broadcasts them to all connected clients.
-
-4. **Join Room**
-   - Description: Allows users to join a specific room.
-
-5. **Message to Room**
-   - Description: Sends messages to a specific room.
-
-## REST API Endpoints
-
-1. **GET /status**
-   - Description: Returns the server status.
-   - Response: `{ "status": "Server is running" }`
-
-2. **GET /message**
-   - Description: Returns a sample message.
-   - Response: `{ "message": "Hello from the server!" }`
+- **Connection Event**: When a user connects, a message is logged, and a welcome message is emitted to the client.
+- **Disconnect Event**: Logs when a user disconnects.

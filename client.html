@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Socket.IO</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <h1>Client Socket.IO</h1>
+    <input type="text" id="messageInput" placeholder="Type your message here">
+    <button id="sendMessage">Send Message</button>
+    <div id="messages"></div>
+
+    <script>
+        const socket = io();
+
+        // Ensure event listener is set up only once
+        document.getElementById('sendMessage').onclick = function() {
+            const message = document.getElementById('messageInput').value;
+            socket.emit('clientMessage', message);
+        };
+
+        socket.on('serverMessage', function(data) {
+            console.log('Message received from server:', data);
+            const messagesDiv = document.getElementById('messages');
+            console.log("data",data)
+            messagesDiv.innerHTML += '<p>' + data + '</p>';
+        });
+    </script>
+</body>
+</html>

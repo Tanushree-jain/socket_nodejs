@@ -5,5 +5,8 @@
     "socket.io": "^4.8.1",
     "express": "^4.21.2",
     "@types/express": "^5.0.0"
+  },
+  "scripts": {
+    "start": "tsc && node dist/server.js"
   }
 }

@@ -6,31 +6,22 @@
   },
   "item": [
     {
-      "name": "Get Server Status",
+      "name": "Root Endpoint",
       "request": {
         "method": "GET",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
         "url": {
-          "raw": "http://localhost:3000/status",
+          "raw": "http://localhost:3000/",
           "protocol": "http",
-          "host": ["localhost"],
+          "host": [
+            "localhost"
+          ],
           "port": "3000",
-          "path": ["status"]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Get Sample Message",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "http://localhost:3000/message",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
-          "path": ["message"]
+          "path": []
         }
       },
       "response": []
